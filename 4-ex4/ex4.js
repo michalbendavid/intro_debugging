@@ -2,17 +2,15 @@ const characters = require("../data/harry_potter/characters.json");
 const solution = require("../solutions/solution4");
 // format the data to create a new array
 // in the new array, all object will be in this format:
-
-/*
-{
-    names: ["...", ...all alternative names],
-    type: [$species, $ancestry, $gender],
-    house: $house
-}
-*/
-
+// console.log(characters);
+// // Iterate over the fields array, using each one to set the  key and value
+// {
+//     names: ["...", ...all alternative names],
+//     type: [$species, $ancestry, $gender],
+//     house: $house
+// }
+// */
 // for example:
-
 /*
 {
     names: ['Lily Potter', 'Lily Luna Potter' ],
@@ -20,14 +18,13 @@ const solution = require("../solutions/solution4");
     house: 'Gryffindor'
 }
 */
-
 try {
   /* Write your code here: */
   const formattedCharacters = characters.map((character) => {
     return {
-      names: [character.name, character.alternate_names],
-      type: [character.gender, character.species, character.ancestry],
-      house: house,
+      names: [character.name, ...character.alternate_names],
+      type: [character.species, character.ancestry, character.gender],
+      house: character.house,
     };
   });
 
