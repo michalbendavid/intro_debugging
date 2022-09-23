@@ -96,9 +96,11 @@ const chooseButtons = Array.from(
   document.getElementsByClassName("choose-button")
 );
 
-chooseButtons[0].addEventListener("click", (e) => {
+for (let i=0; i<=chooseButtons.length; i++){
+  chooseButtons[i].addEventListener("click", (e) => {
   createCards([characters[e.target.id]]);
-});
+  });
+};
 
 const selects = document.getElementsByTagName("select");
 const resetButton = document.getElementById("reset-button");
