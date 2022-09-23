@@ -88,9 +88,7 @@ const chooseRandomButton = document.getElementById("choose-random");
 
 let random;
 chooseRandomButton.addEventListener("click", () => {
-  if (!random) {
-    random = Math.floor(Math.random() * characters.length);
-  }
+  random = Math.floor(Math.random() * characters.length);
   createCards([characters[random]]);
 });
 
