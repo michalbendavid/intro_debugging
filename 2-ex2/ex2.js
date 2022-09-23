@@ -4,7 +4,7 @@ const solution = require("../solutions/solution2");
 
 const gryffindors = characters.filter((x) => 
   x.house === "Gryffindor");
-console.log(gryffindors.house);
+
 console.log(
   "Exercie 2 passed: ",
   JSON.stringify(gryffindors) === JSON.stringify(solution)
